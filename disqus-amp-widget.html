@@ -24,11 +24,9 @@
     }
 </script>
 <script>
-    var doc = document;
-    var win = window;
     // url search query helper
     function $_GET( vars ) {
-    var query = win.location.search.slice(1);
+    var query = window.location.search.slice(1);
     var variable = query.split('&');
     for (var i = 0; i < variable.length; i++) {
         var name = variable[i].split('=');
