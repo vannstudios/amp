@@ -24,10 +24,16 @@ function receiveMessage(event)
 }
 </script>
 <script>
+
+  var disqus_url = $_GET('shortname');
+  var disqus_identifier = $_GET('shortname');
+  var disqus_title = $_GET('shortname');
+
   var disqus_config = function () {
-  this.page.url = decodeURIComponent(getQueryVariable("url"));  
-  this.page.identifier = decodeURIComponent(getQueryVariable("identifier"));
-  this.page.title = decodeURIComponent(getQueryVariable("title"));
+  this.page.url = disqus_url;  
+  this.page.identifier = disqus_identifier;
+  this.page.title = disqus_title;
+
   };
 
   (function() { // DON'T EDIT BELOW THIS LINE
