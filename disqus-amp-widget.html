@@ -24,7 +24,17 @@ function receiveMessage(event)
 }
 </script>
 <script>
-
+  // url search query helper
+  function $_GET( vars ) {
+    var query = win.location.search.slice(1);
+    var variable = query.split('&');
+    for (var i = 0; i < variable.length; i++) {
+        var name = variable[i].split('=');
+        if ( name[0] === vars ) return decodeURIComponent( name[1].replace(/\+/g, " ") );
+    };
+    return (false);
+  };
+    
   var disqus_url = $_GET('shortname');
   var disqus_identifier = $_GET('shortname');
   var disqus_title = $_GET('shortname');
