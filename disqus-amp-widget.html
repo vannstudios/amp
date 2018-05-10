@@ -25,9 +25,9 @@ function receiveMessage(event)
 </script>
 <script>
   var disqus_config = function () {
-  this.page.url = $_GET('url');  
-  this.page.identifier = $_GET('identifier');
-  this.page.title = $_GET('title');
+  this.page.url = decodeURIComponent(getQueryVariable("url"));  
+  this.page.identifier = decodeURIComponent(getQueryVariable("identifier"));
+  this.page.title = decodeURIComponent(getQueryVariable("title"));
   };
 
   (function() { // DON'T EDIT BELOW THIS LINE
